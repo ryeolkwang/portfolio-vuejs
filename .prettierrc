@@ -1,0 +1,11 @@
+{
+	"singleQuote": true,
+	"jsxSingleQuote": true,
+	"endOfLine": "auto",
+	"htmlWhitespaceSensitivity": "css",
+	"tabWidth": 4,
+	"bracketSpacing": true,
+	"jsxBracketSameLine": true,
+	"useTabs": true,
+	"trailingComma": "none"
+}
