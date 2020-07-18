@@ -1,0 +1,34 @@
+{
+	"name": "kwangryeol park",
+	"email": "ryeolkwang@gmail.com",
+	"area": {
+		"city": "tokyo",
+		"country": "japan"
+	},
+	"education": [
+		{
+			"level": "Undergraduate",
+			"school": "LSE",
+			"degree": "BSc",
+			"course": "Acturial Science"
+		},
+		{
+			"level": "Undergraduate",
+			"school": "LSE",
+			"degree": "MSc",
+			"course": "Risk Management"
+		}
+	],
+	"languages": ["English", "Japanese", "Korean"],
+	"skills": [
+	  "HTML, CSS, JavaScript",
+	  "Vue, Vuex, Vue Router",
+	  "Zeplin, Figma"
+	],
+	"work experience": [
+	  "IT Consultant and Front-end Developer at BayCurrent Consulting / 2018-"
+	],
+	"etc": [
+	  "Working on it"
+	]
+  }

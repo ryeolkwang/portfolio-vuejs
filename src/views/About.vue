@@ -1,5 +1,30 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+	<div class="about">
+		<Intro msg="Welcome to My Portfolio in Vue.js" />
+		<Skills />
+	</div>
 </template>
+
+<script>
+import Intro from '@/components/Intro.vue';
+import Skills from '@/components/Skills.vue';
+
+export default {
+	name: 'Home',
+	components: {
+		Intro,
+		Skills
+	}
+};
+</script>
+
+<style scoped lang="scss">
+.sidebar {
+	width: 30%;
+	padding: 30px;
+}
+
+.name {
+	margin-bottom: 50px;
+}
+</style>
