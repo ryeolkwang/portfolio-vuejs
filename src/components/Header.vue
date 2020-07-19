@@ -1,13 +1,15 @@
 <template>
 	<header class="sidebar">
 		<h3 class="name">
-			park kwangryeol
+			{{ this.about.name }}
 		</h3>
 		<div class="content">
 			<a href="mailto:ryeolkwang@gmail.com">
-				ryeolkwang@gmail.com
+				{{ this.about.email }}
 			</a>
-			<p>Tokyo, Japan</p>
+			<p class="area">
+				{{ this.about.area.city }}, {{ this.about.area.country }}
+			</p>
 		</div>
 	</header>
 </template>
@@ -24,11 +26,15 @@ export default {
 
 <style scoped lang="scss">
 .sidebar {
-	width: 30%;
 	padding: 30px;
+	text-align: center;
 }
 
 .name {
 	margin-bottom: 50px;
+}
+
+.area {
+	margin-top: 15px;
 }
 </style>

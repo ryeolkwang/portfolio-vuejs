@@ -1,25 +1,26 @@
 <template>
 	<div class="intro">
-		<div class="introTitle">
-			<h1>{{ msg }}</h1>
-			<p>
-				For a guide and recipes on how to configure / customize this
-				project,<br />
-				check out the
-				<a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-					>vue-cli documentation</a
-				>.
-			</p>
-		</div>
-		<img class="logo" alt="Vue logo" src="@/assets/logo.png" />
+		<h1>
+			{{ welcome }}
+			<img class="vue" alt="Vue logo" src="@/assets/vueLogo.png" />
+		</h1>
+		<p class="story">
+			{{ this.about.intro }}
+		</p>
 	</div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
 	name: 'Intro',
 	props: {
-		msg: String
+		welcome: String
+	},
+
+	computed: {
+		...mapState(['about'])
 	}
 };
 </script>
@@ -34,17 +35,16 @@ h1 {
 }
 
 .intro {
-	display: flex;
+	margin-bottom: 30px;
 }
 
-.logo {
-	width: 50px;
-	height: 50px;
-	display: flex;
-	align-items: center;
+.vue {
+	height: 35px;
+	width: 35px;
+	vertical-align: text-top;
 }
 
-.introTitle {
-	margin: 0 30px 30px 0;
+.story {
+	line-height: 1.35;
 }
 </style>

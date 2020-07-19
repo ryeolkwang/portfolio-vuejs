@@ -1,6 +1,6 @@
 <template>
 	<div class="about">
-		<Intro msg="Welcome to My Portfolio in Vue.js" />
+		<Intro welcome="Welcome to My Portfolio in Vue.js" />
 		<Skills />
 	</div>
 </template>
