@@ -1,6 +1,6 @@
 <template>
 	<div class="about">
-		<Intro welcome="Welcome to My Portfolio in Vue.js" />
+		<Intro welcome="About me" />
 		<Skills />
 	</div>
 </template>
@@ -17,14 +17,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped lang="scss">
-.sidebar {
-	width: 30%;
-	padding: 30px;
-}
-
-.name {
-	margin-bottom: 50px;
-}
-</style>

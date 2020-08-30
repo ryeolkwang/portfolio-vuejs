@@ -2,7 +2,6 @@
 	<div class="intro">
 		<h1>
 			{{ welcome }}
-			<img class="vue" alt="Vue logo" src="@/assets/vueLogo.png" />
 		</h1>
 		<p class="story">
 			{{ this.about.intro }}
@@ -26,22 +25,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-a {
-	color: #42b983;
-}
-
 h1 {
 	margin: 0 0 20px;
 }
 
 .intro {
 	margin-bottom: 30px;
-}
-
-.vue {
-	height: 35px;
-	width: 35px;
-	vertical-align: text-top;
 }
 
 .story {

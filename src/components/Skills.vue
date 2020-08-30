@@ -13,6 +13,9 @@
 				{{ list }}
 			</li>
 		</ul>
+		<button class="toggleButton" @click="toggleAll()">
+			{{ toggleButton }}
+		</button>
 	</div>
 </template>
 
@@ -45,6 +48,10 @@ export default {
 					obj[key] = this.about[key];
 					return obj;
 				}, {});
+		},
+
+		toggleButton() {
+			return this.expandedGroup.length === 0 ? 'Open all' : 'Close all';
 		}
 	},
 
@@ -57,25 +64,26 @@ export default {
 			if (this.isExpanded(idx))
 				this.expandedGroup.splice(this.expandedGroup.indexOf(idx), 1);
 			else this.expandedGroup.push(idx);
+		},
+
+		toggleAll() {
+			if (this.expandedGroup.length === 0)
+				this.expandedGroup.push(...Object.keys(this.aboutItems));
+			else this.expandedGroup.splice(0);
 		}
 	}
 };
 </script>
 
 <style scoped lang="scss">
-a {
-	color: #42b983;
-}
-
 ul {
 	font-weight: bold;
 	line-height: 1.5;
 	cursor: pointer;
 
 	&::before {
-		content: '👉';
+		content: '\25BA';
 		display: inline;
-		vertical-align: text-bottom;
 	}
 
 	+ ul {
@@ -88,13 +96,29 @@ ul {
 
 	&.ExToggled {
 		&::before {
-			content: '👇';
+			content: '\25BC';
 		}
 	}
 }
 
 li {
+	position: relative;
+	margin-left: 20px;
 	list-style: none;
 	font-weight: normal;
+
+	&::before {
+		content: '-';
+		position: absolute;
+		left: -15px;
+	}
+}
+
+.toggleButton {
+	margin-top: 30px;
+	color: #777;
+	border: none;
+	background-color: transparent;
+	text-decoration: underline;
 }
 </style>
