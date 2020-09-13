@@ -76,6 +76,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.skills {
+	margin: 30px;
+}
+
 ul {
 	font-weight: bold;
 	line-height: 1.5;
@@ -108,7 +112,7 @@ li {
 	font-weight: normal;
 
 	&::before {
-		content: '-';
+		content: '';
 		position: absolute;
 		left: -15px;
 	}

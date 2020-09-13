@@ -1,9 +1,7 @@
 <template>
 	<div class="app">
-		<main class="main">
-			<Nav />
-			<router-view />
-		</main>
+		<Nav />
+		<router-view />
 	</div>
 </template>
 
@@ -42,10 +40,6 @@ body {
 a {
 	color: inherit;
 	text-decoration: none;
-}
-
-main {
-	margin: 30px;
 }
 
 .app {

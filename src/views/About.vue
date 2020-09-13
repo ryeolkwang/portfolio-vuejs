@@ -1,6 +1,6 @@
 <template>
 	<div class="about">
-		<Intro welcome="About me" />
+		<Intro welcome="Front-end Developer & IT Consultant" />
 		<Skills />
 	</div>
 </template>

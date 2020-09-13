@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import About from '@/views/About.vue';
-import Works from '@/views/Works.vue';
+import Projects from '@/views/Projects.vue';
+import Takeout from '@/components/Takeout.vue';
+import EarlyWage from '@/components/EarlyWage.vue';
 
 Vue.use(VueRouter);
 
@@ -12,9 +14,19 @@ const routes = [
 		component: About
 	},
 	{
-		path: '/works',
-		name: 'Works',
-		component: Works
+		path: '/projects',
+		name: 'Projects',
+		component: Projects,
+		children: [
+			{
+				path: 'takeout',
+				component: Takeout
+			},
+			{
+				path: 'early-wage',
+				component: EarlyWage
+			}
+		]
 	}
 ];
 

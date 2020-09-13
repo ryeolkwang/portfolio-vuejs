@@ -8,19 +8,22 @@
 	"intro": "Hi, I'm Kwangryeol Park, a front-end developer currently working at an IT consulting company based in Tokyo, Japan. For the past 2 years, I've worked as both as an IT consultant, focusing on research and requirement designs, and a front-end developer, building on the concepts and designs that I've created. Passionate about coding and user-experience, I hope to continue my career as a front-end developer making new tools and applications for the advancement and improvement of society.",
 	"work experience": [
 		"IT Consultant & Front-end Developer at BayCurrent Consulting / 2018-"
-	  ],
+	],
 	"education": [
 		"Undergraduate: Studied BSc Actuarial Science at LSE / 2014-2017",
 		"Postgraduate: Studied MSc Risk Management at LSE / 2017-2018"
 	],
 	"languages": ["English", "Japanese", "Korean"],
 	"skills": [
-	  "HTML, CSS, JavaScript",
-	  "Vue, Vuex, Vue Router",
-	  "Zeplin, Figma"
+		"HTML, CSS, JavaScript",
+		"SCSS/Sass",
+		"Vue, Vuex, Vue Router",
+		"Node.js",
+		"Zeplin, Figma"
 	],
 	"etc": [
-	  "Working on my mini-projects",
-	  "Studying CSS and JavaScript on Udemy"
+		"Read the Eloquent Javascript",
+		"Working on my mini-projects",
+		"Taking CSS and JavaScript courses on Udemy"
 	]
 }
