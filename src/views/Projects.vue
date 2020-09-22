@@ -6,7 +6,7 @@
 		<h1>Projects</h1>
 		<nav v-show="showProjectList" class="projectList">
 			<router-link to="/projects/takeout" class="title">
-				Pockeo
+				Food Takeout
 				<p>
 					Food Takeout Ordering Application
 				</p>
@@ -18,8 +18,17 @@
 				</p>
 			</router-link>
 		</nav>
-
 		<router-view />
+		<div class="agreement">
+			To comply with my non-disclosure agreement, I have omitted all
+			confidential information in these case studies including the name of
+			my client and service. All information in these case studies is my
+			own and does not necessarily reflect the views of neither my client
+			nor my client.
+		</div>
+		<a href="#" class="topButton">
+			Top
+		</a>
 	</div>
 </template>
 
@@ -52,35 +61,64 @@ h1 {
 	}
 }
 
+.projects {
+	position: relative;
+}
+
 .backButton {
 	position: absolute;
-	top: 65px;
-	left: 30px;
+	top: 130px;
+	left: 75px;
 	font-size: 0;
+	z-index: 10;
 
 	&::before {
-		content: '\1438';
+		content: '\003C';
 		display: block;
-		font-size: 20px;
+		font-size: 30px;
 		font-weight: bold;
 	}
 }
 
 .projectList {
-	min-height: calc(100vh - 194px);
-	padding: 80px 30px;
+	min-height: calc(100vh - 194px - 180px);
+	padding: 80px 30px 30px;
 	background-color: #f5f5f5;
 	clip-path: polygon(0 0, 50% 60px, 100% 0, 100% 100%, 0 100%);
 }
 
 .title {
-	font-size: 48px;
+	font-size: 44px;
 	font-weight: bold;
 
 	p {
 		margin: 10px 0 80px;
 		font-size: 16px;
 		color: red;
+	}
+}
+
+.agreement {
+	height: 180px;
+	background-color: #f5f5f5;
+	text-align: center;
+	padding: 30px;
+	color: #555;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.topButton {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	text-align: right;
+	font-size: 14px;
+
+	&::after {
+		content: '\25B2';
+		display: inline;
+		font-size: 14px;
 	}
 }
 </style>
