@@ -1,6 +1,8 @@
 <template>
 	<nav class="nav">
-		<img class="logo" alt="My logo" src="@/assets/logo.png" />
+		<router-link to="/" class="ExLogoLink">
+			<img class="logo" alt="My logo" src="@/assets/logo.png" />
+		</router-link>
 		<router-link to="/">
 			About Me
 			<img src="@/assets/icon_profile.png" class="router-icon" />
@@ -18,6 +20,7 @@
 .nav {
 	position: fixed;
 	width: 100%;
+	max-width: 480px;
 	text-align: right;
 	padding: 10px 30px;
 	background-color: rgba(255, 255, 255, 0.9);
@@ -42,6 +45,16 @@
 			width: 24px;
 			background-color: #2c3e50;
 		}
+
+		&.ExLogoLink {
+			position: absolute;
+			top: 0;
+			left: 30px;
+
+			&.router-link-exact-active::before {
+				content: none;
+			}
+		}
 	}
 
 	.router-icon {
@@ -52,9 +65,6 @@
 }
 
 .logo {
-	position: absolute;
-	top: 0;
-	left: 30px;
 	width: 50px;
 	height: 50px;
 }

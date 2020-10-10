@@ -51,6 +51,7 @@ h3 {
 .webDesignIcon {
 	position: relative;
 	width: 50vw;
+	max-width: 240px;
 	bottom: -35px;
 }
 
