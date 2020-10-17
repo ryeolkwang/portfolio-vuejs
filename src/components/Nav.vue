@@ -1,16 +1,18 @@
 <template>
 	<nav class="nav">
-		<router-link to="/" class="ExLogoLink">
-			<img class="logo" alt="My logo" src="@/assets/logo.png" />
-		</router-link>
-		<router-link to="/">
-			About Me
-			<img src="@/assets/icon_profile.png" class="router-icon" />
-		</router-link>
-		<router-link to="/projects">
-			Projects
-			<img src="@/assets/icon_projects.png" class="router-icon" />
-		</router-link>
+		<div class="nav-content">
+			<router-link to="/" class="ExLogoLink">
+				<img class="logo" alt="My logo" src="@/assets/logo.png" />
+			</router-link>
+			<router-link to="/">
+				<img src="@/assets/icon_profile.png" class="router-icon" />
+				<template v-if="!isSp">About Me</template>
+			</router-link>
+			<router-link to="/projects">
+				<img src="@/assets/icon_projects.png" class="router-icon" />
+				<template v-if="!isSp">Projects</template>
+			</router-link>
+		</div>
 	</nav>
 </template>
 
@@ -20,16 +22,27 @@
 .nav {
 	position: fixed;
 	width: 100%;
-	max-width: 480px;
 	text-align: right;
-	padding: 10px 30px;
 	background-color: rgba(255, 255, 255, 0.9);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	z-index: 100;
+	@include tablet {
+		border: none;
+	}
+
+	&-content {
+		position: relative;
+		padding: 10px 30px;
+		@include tablet {
+			padding: 40px 50px;
+		}
+		@include pc {
+			margin: 0 auto;
+		}
+	}
 
 	a {
 		position: relative;
-		font-size: 0;
 		color: #2c3e50;
 		margin-right: 30px;
 
@@ -37,19 +50,32 @@
 			margin-right: 0;
 		}
 
-		&.router-link-exact-active::before {
-			content: '';
-			position: absolute;
-			top: 6px;
-			height: 3px;
-			width: 24px;
-			background-color: #2c3e50;
+		&.router-link-exact-active {
+			@include tablet {
+				font-weight: bold;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 20px;
+				height: 3px;
+				width: 24px;
+				background-color: #2c3e50;
+				@include tablet {
+					content: none;
+				}
+			}
 		}
 
 		&.ExLogoLink {
 			position: absolute;
 			top: 0;
 			left: 30px;
+			@include tablet {
+				top: 10px;
+				left: 50px;
+			}
 
 			&.router-link-exact-active::before {
 				content: none;
@@ -61,11 +87,19 @@
 		height: 24px;
 		width: 24px;
 		vertical-align: bottom;
+		@include tablet {
+			margin-right: 10px;
+			vertical-align: middle;
+		}
 	}
 }
 
 .logo {
 	width: 50px;
 	height: 50px;
+	@include tablet {
+		width: 80px;
+		height: 80px;
+	}
 }
 </style>

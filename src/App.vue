@@ -47,7 +47,6 @@ a {
 	flex-direction: column;
 	min-height: 100vh;
 	height: auto;
-	max-width: 480px;
 	margin: 0 auto;
 	background-color: #fff;
 	font-family: Avenir, Helvetica, Arial, sans-serif;

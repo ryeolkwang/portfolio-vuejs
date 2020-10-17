@@ -23,8 +23,6 @@
 import { mapState } from 'vuex';
 
 export default {
-	name: 'Intro',
-
 	data() {
 		return {
 			expandedGroup: []
@@ -78,6 +76,12 @@ export default {
 <style scoped lang="scss">
 .skills {
 	margin: 30px;
+	@include tablet {
+		margin: 50px;
+	}
+	@include pc {
+		margin: 50px auto;
+	}
 }
 
 ul {

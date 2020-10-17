@@ -7,6 +7,12 @@ require('../node_modules/normalize.css/normalize.css');
 
 Vue.config.productionTip = false;
 
+Vue.mixin({
+	computed: {
+		isSp: () => window.matchMedia('(max-width: 576px)').matches
+	}
+});
+
 new Vue({
 	router,
 	store,

@@ -20,15 +20,17 @@
 		</nav>
 		<router-view />
 		<div class="agreement">
-			To comply with my non-disclosure agreement, I have omitted all
-			confidential information in these case studies including the name of
-			my client and service. All information in these case studies is my
-			own and does not necessarily reflect the views of neither my client
-			nor my client.
+			<div class="content">
+				To comply with my non-disclosure agreement, I have omitted all
+				confidential information in these case studies including the
+				name of my client and service. All information in these case
+				studies is my own and does not necessarily reflect the views of
+				neither my client nor my client.
+				<a href="#" class="topButton">
+					Top
+				</a>
+			</div>
 		</div>
-		<a href="#" class="topButton">
-			Top
-		</a>
 	</div>
 </template>
 
@@ -71,6 +73,7 @@ h1 {
 	left: 75px;
 	font-size: 0;
 	z-index: 10;
+	cursor: pointer;
 
 	&::before {
 		content: '\003C';
@@ -85,6 +88,9 @@ h1 {
 	padding: 80px 30px 30px;
 	background-color: #f5f5f5;
 	clip-path: polygon(0 0, 50% 60px, 100% 0, 100% 100%, 0 100%);
+	@include tablet {
+		padding: 80px 50px 30px;
+	}
 }
 
 .title {
@@ -106,14 +112,28 @@ h1 {
 	color: #555;
 	font-size: 12px;
 	line-height: 1.4;
+	@include tablet {
+		padding: 30px 60px;
+	}
+
+	.content {
+		position: relative;
+		@include pc;
+		margin: 0 auto;
+	}
 }
 
 .topButton {
 	position: absolute;
-	bottom: 30px;
-	right: 30px;
+	bottom: -20px;
+	right: 0;
 	text-align: right;
 	font-size: 14px;
+
+	@include tablet {
+		right: 0;
+		top: 80px;
+	}
 
 	&::after {
 		content: '\25B2';

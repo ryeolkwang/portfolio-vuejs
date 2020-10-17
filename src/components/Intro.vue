@@ -3,16 +3,18 @@
 		<h1>
 			{{ welcome }}
 		</h1>
-		<h3>
+		<h3 class="name">
 			{{ about.name }}
 		</h3>
 		<img src="@/assets/icon_web_design.png" class="webDesignIcon" />
 		<div class="story">
-			<h3>
-				Hi, I'm Kwangryeol Park.<br />
-				Nice to meet you!
-			</h3>
-			{{ about.intro }}
+			<div class="content">
+				<h3>
+					Hi, I'm Kwangryeol Park.<br />
+					Nice to meet you!
+				</h3>
+				{{ about.intro }}
+			</div>
 		</div>
 	</div>
 </template>
@@ -21,7 +23,6 @@
 import { mapState } from 'vuex';
 
 export default {
-	name: 'Intro',
 	props: {
 		welcome: String
 	},
@@ -41,6 +42,11 @@ h1 {
 
 h3 {
 	margin-bottom: 50px;
+	&.name {
+		@include tablet {
+			margin-bottom: 100px;
+		}
+	}
 }
 
 .intro {
@@ -53,6 +59,9 @@ h3 {
 	width: 50vw;
 	max-width: 240px;
 	bottom: -35px;
+	@include tablet {
+		bottom: 0;
+	}
 }
 
 .story {
@@ -61,5 +70,15 @@ h3 {
 	color: rgb(240, 240, 240);
 	padding: 100px 30px;
 	line-height: 1.5;
+	@include tablet {
+		clip-path: none;
+		padding: 100px 50px;
+	}
+}
+
+.content {
+	@include pc {
+		margin: 0 auto;
+	}
 }
 </style>
