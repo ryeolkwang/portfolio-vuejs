@@ -1,24 +1,32 @@
 <template>
 	<div class="projects">
-		<a v-show="!showProjectList" @click="$router.back()" class="backButton">
-			back
-		</a>
-		<h1>Projects</h1>
-		<nav v-show="showProjectList" class="projectList">
-			<router-link to="/projects/takeout" class="title">
-				Food Takeout
-				<p>
-					Food Takeout Ordering Application
-				</p>
-			</router-link>
-			<router-link to="/projects/early-wage" class="title">
-				Early Wage
-				<p>
-					New Business in Early Wage Access
-				</p>
-			</router-link>
-		</nav>
-		<router-view />
+		<div class="title">
+			<a
+				v-show="!showProjectList"
+				@click="$router.back()"
+				class="backButton"
+			>
+				back
+			</a>
+			<h1>Projects</h1>
+		</div>
+		<div class="projectList">
+			<nav v-show="showProjectList" class="projectListContent">
+				<router-link to="/projects/takeout" class="projectName">
+					Food Takeout
+					<p>
+						Food Takeout Ordering Application
+					</p>
+				</router-link>
+				<router-link to="/projects/early-wage" class="projectName">
+					Early Wage
+					<p>
+						New Business in Early Wage Access
+					</p>
+				</router-link>
+			</nav>
+			<router-view v-show="!showProjectList" class="projectListContent" />
+		</div>
 		<div class="agreement">
 			<div class="content">
 				To comply with my non-disclosure agreement, I have omitted all
@@ -45,41 +53,47 @@ export default {
 </script>
 
 <style scoped lang="scss">
-h1 {
-	position: relative;
-	margin: 130px 30px 30px;
-	text-align: center;
-	font-size: 30px;
-
-	&::before {
-		content: '';
-		position: absolute;
-		bottom: -10px;
-		left: 50%;
-		transform: translateX(-50%);
-		height: 3px;
-		width: 50px;
-		background-color: #2c3e50;
-	}
-}
-
 .projects {
 	position: relative;
 }
 
-.backButton {
-	position: absolute;
-	top: 130px;
-	left: 75px;
-	font-size: 0;
-	z-index: 10;
-	cursor: pointer;
+.title {
+	position: relative;
+	margin: 130px auto 30px;
+	text-align: center;
+	@include pc {
+	}
 
-	&::before {
-		content: '\003C';
-		display: block;
+	.backButton {
+		position: absolute;
+		left: 30px;
+		font-size: 0;
+		cursor: pointer;
+		@include tablet {
+			left: 50px;
+		}
+
+		&::before {
+			content: '←';
+			display: block;
+			font-size: 30px;
+			font-weight: bold;
+		}
+	}
+
+	h1 {
 		font-size: 30px;
-		font-weight: bold;
+		margin: 0 auto;
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			transform: translateX(-50%);
+			height: 3px;
+			width: 50px;
+			background-color: #2c3e50;
+		}
 	}
 }
 
@@ -89,11 +103,17 @@ h1 {
 	background-color: #f5f5f5;
 	clip-path: polygon(0 0, 50% 60px, 100% 0, 100% 100%, 0 100%);
 	@include tablet {
-		padding: 80px 50px 30px;
+		padding: 80px 50px;
+	}
+
+	&Content {
+		@include pc {
+			margin: 0 auto;
+		}
 	}
 }
 
-.title {
+.projectName {
 	font-size: 44px;
 	font-weight: bold;
 

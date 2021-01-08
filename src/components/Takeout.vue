@@ -82,12 +82,6 @@ p {
 
 .takeout {
 	min-height: calc(100vh - 194px);
-	padding: 80px 30px;
-	background-color: #f5f5f5;
-	clip-path: polygon(0 0, 50% 60px, 100% 0, 100% 100%, 0 100%);
-	@include tablet {
-		padding: 80px 50px;
-	}
 }
 
 .techStack {
